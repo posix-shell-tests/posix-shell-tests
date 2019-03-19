@@ -1,5 +1,4 @@
 # signal.tst: test of signal handling for any POSIX-compliant shell
-../checkfg || skip="true" # %REQUIRETTY%
 
 posix="true"
 

@@ -1,5 +1,4 @@
 # testtty.tst: test of the test built-in for any POSIX-compliant shell
-../checkfg || skip="true" # %REQUIRETTY%
 
 if ! testee -c 'command -bv test' >/dev/null; then
     skip="true"
