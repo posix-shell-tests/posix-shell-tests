@@ -1,5 +1,4 @@
 # bg.tst: test of the bg built-in for any POSIX-compliant shell
-../checkfg || skip="true" # %REQUIRETTY%
 
 posix="true"
 
@@ -36,6 +35,9 @@ bg >/dev/null
 wait %
 __IN__
 
+(
+# FIXME Check if the process is in background w/o using checkfg
+skip="true"
 test_oE 'resumed job is in background' -m
 sh -c 'kill -s STOP $$; ../checkfg || echo bg'
 bg >/dev/null
@@ -43,6 +45,7 @@ wait %
 __IN__
 bg
 __OUT__
+)
 
 test_oE 'specifying job ID' -m
 ./job1

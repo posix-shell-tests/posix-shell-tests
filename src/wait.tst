@@ -1,5 +1,4 @@
 # wait.tst: test of the wait built-in for any POSIX-compliant shell
-../checkfg || skip="true" # %REQUIRETTY%
 
 posix="true"
 

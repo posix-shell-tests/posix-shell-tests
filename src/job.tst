@@ -1,5 +1,4 @@
 # job.tst: test of job control for any POSIX-compliant shell
-../checkfg || skip="true" # %REQUIRETTY%
 
 posix="true"
 

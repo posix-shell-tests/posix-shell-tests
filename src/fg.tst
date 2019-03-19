@@ -1,5 +1,4 @@
 # fg.tst: test of the fg built-in for any POSIX-compliant shell
-../checkfg || skip="true" # %REQUIRETTY%
 
 posix="true"
 
@@ -29,12 +28,16 @@ __IN__
 1
 __OUT__
 
+(
+# FIXME Check if the process is in foreground w/o using checkfg
+skip="true"
 test_oE 'resumed job is in foreground' -m
 sh -c 'kill -s STOP $$; ../checkfg && echo fg'
 fg >/dev/null
 __IN__
 fg
 __OUT__
+)
 
 test_x -e 127 'resumed job is disowned unless suspended again' -m
 cat fifo >/dev/null &
